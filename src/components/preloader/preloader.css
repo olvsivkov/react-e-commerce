@@ -1,0 +1,5 @@
+.position-centre {
+  display: flex;
+  justify-content: center; /* центрирует контент по горизонтали */
+  align-items: center; /* центрирует контент по вертикали */
+}

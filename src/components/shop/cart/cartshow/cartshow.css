@@ -1,0 +1,36 @@
+.close-icons{
+  cursor: pointer;
+  font-size: 28px;
+  position: fixed;
+  right: 0.8rem;
+}
+
+.close-icon-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-list{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 50rem;
+  max-width: 95%;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.item-card{
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+}
+

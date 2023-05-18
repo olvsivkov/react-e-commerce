@@ -1,0 +1,23 @@
+.btn-bye {
+  margin: 1%;
+}
+.card-image{
+  height: 500px;
+  overflow: hidden;
+}
+
+#card-img{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.card-content {
+  height: 250px;
+}
+
+.price{
+  font-size: large;
+  font-weight: 700;
+}

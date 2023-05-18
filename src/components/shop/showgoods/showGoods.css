@@ -1,0 +1,7 @@
+.items-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: stretch;
+  align-items: stretch;
+  gap: 1rem;
+}

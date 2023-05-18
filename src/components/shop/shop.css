@@ -1,0 +1,5 @@
+.main-section {
+  min-height: calc(100vh - 64px - 70px);
+  margin: auto;
+  width: 95%;
+}
