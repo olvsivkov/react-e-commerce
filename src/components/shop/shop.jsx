@@ -14,6 +14,31 @@ function Shop() {
   const [loading, setLoading] = useState(true)
   const [order, setOrder] = useState([])
   const [isBasketShow, setBasketShow] = useState(false)
+  const [showPopup, setShowPopup] = useState(false);
+
+  function addOneQuantity(id){ // !!!!
+    setOrder(prevState =>
+      prevState.map(item => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
+  function removeOneQuantity(id){ //!!!!
+    setOrder(prevState =>
+      prevState.map(item => {
+        if (item.id === id && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
 
   useEffect(
     function getGoods(){
@@ -31,6 +56,18 @@ function Shop() {
     }, []
   )
 
+  useEffect(() => {
+    let timeoutId;
+    if (showPopup) {
+      timeoutId = setTimeout(() => {
+        setShowPopup(false);
+      }, 700);
+    }
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [showPopup]);
+
   const removeGoodFromBasket = (id) => {
     setOrder(order.filter(good => good.id !== id))
   } 
@@ -40,7 +77,7 @@ function Shop() {
   }
 
   /*
-  Функция addToBasket принимает в аргументы объекты, которые выбрал пользователь. Они добавляются в пустой массив argArray и затем начинают добавлятся в state order через forEach. Если ID объектов одинаковое, то добавляется только один объект и у него увеличивается значение quantity на столько раз, сколько одинаковых ID было обнаружено. Если ID найден только один раз, то значение quantity устанавливается = 1 
+  Функция addToBasket принимает в аргументы объекты, которые выбрал пользователь. Они добавляются в пустой массив argArray и затем начинают добавлятся в newOrder через forEach. Если ID найден только один раз, то значение quantity устанавливается = 1 и объект добавляется в массив newOrder, если ID найден повторно, то срабатывает return.
   */
 
   const addToBasket = (arg) => {
@@ -51,10 +88,11 @@ function Shop() {
     argArrayGoods.forEach((item) => {
       const index = newOrder.findIndex((orderItem) => orderItem.id === item.id);
   
-      if (index >= 0) {
-        newOrder[index].quantity += 1;
-      } else {
+      if (index < 0) {
         newOrder.push({ ...item, quantity: 1 });
+        setShowPopup(true);
+      } else {
+        return
       }
     });
   
@@ -67,7 +105,10 @@ function Shop() {
     order,
     handleBasketShow,
     isBasketShow,
-    removeGoodFromBasket
+    removeGoodFromBasket,
+    addOneQuantity,
+    removeOneQuantity,
+    showPopup
   }
 
   return ( 

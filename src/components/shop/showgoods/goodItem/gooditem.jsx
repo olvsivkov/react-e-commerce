@@ -4,7 +4,7 @@ import './gooditem.css'
 
 function Gooditem(props) {
   const {id, image, title, price, description} = props;
-  const {addToBasket} = useContext(CustomContext)
+  const {addToBasket, showPopup} = useContext(CustomContext)
   return <div >
     <div className="card">
       <div className="card-image">
@@ -16,6 +16,7 @@ function Gooditem(props) {
       </div>
       <div>
         <button className='btn btn-bye' onClick={()=> addToBasket({id, title, price})}>Купить</button>
+        {showPopup && (<div className='popup'>Товар добавлен в корзину</div>)}
       </div>
       <div className="card-reveal">
       <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>

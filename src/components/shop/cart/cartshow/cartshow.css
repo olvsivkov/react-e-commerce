@@ -11,6 +11,20 @@
   justify-content: center;
 }
 
+.btns-add-remove{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns-add-remove>button{
+  width: 40%;
+  cursor: pointer;
+}
+
+.good-quantity{
+  width: 40%;
+}
+
 .collection-item{
   display: flex;
   align-items: center;
@@ -31,6 +45,6 @@
 
 .item-card{
   display: grid;
-  grid-template-columns: 10fr 1fr;
+  grid-template-columns: 9fr 1fr 1fr;
 }
 
