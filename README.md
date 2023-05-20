@@ -6,7 +6,7 @@ This project use:
  - React js, 
  - [Materializecss library](https://materializecss.com/about.html)
  - HTML.
- - [fakestoreapi API]('https://fakestoreapi.com/products') 
+ - [fakestoreapi API](https://fakestoreapi.com/products) 
 
 The site simulates an online store.
 When the project starts, you will see 20 products. 
@@ -23,7 +23,7 @@ _________________________________________________________________________
  - React js, 
  - [Materializecss library](https://materializecss.com/about.html)
  - HTML.
- - [fakestoreapi API]('https://fakestoreapi.com/products') 
+ - [fakestoreapi API](https://fakestoreapi.com/products) 
 
 Сайт имитирует интернет магазин.
 Когда проект запустится, вы увидите 20 товаров. 
