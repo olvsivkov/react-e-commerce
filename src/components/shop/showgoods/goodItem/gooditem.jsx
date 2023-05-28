@@ -4,7 +4,16 @@ import './gooditem.css'
 
 function Gooditem(props) {
   const {id, image, title, price, description} = props;
-  const {addToBasket, showPopup} = useContext(CustomContext)
+  const {dispatchGetOrder, dispatchShowPopup, showPopup} = useContext(CustomContext)
+
+  function handleButtonClick(){
+    dispatchGetOrder({ type: 'ADD_TO_BASKET', payload: {id, title, price}});
+    dispatchShowPopup({ type: "SHOW_POPUP" });
+    setTimeout(() => {
+      dispatchShowPopup({ type: "CLOSE_POPUP" });
+    }, 1000);
+  }
+
   return <div >
     <div className="card">
       <div className="card-image">
@@ -15,7 +24,7 @@ function Gooditem(props) {
         <p className='price'>{price} $</p>
       </div>
       <div>
-        <button className='btn btn-bye' onClick={()=> addToBasket({id, title, price})}>Купить</button>
+        <button className='btn btn-bye' onClick={handleButtonClick}>Купить</button>
         {showPopup && (<div className='popup'>Товар добавлен в корзину</div>)}
       </div>
       <div className="card-reveal">

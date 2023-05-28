@@ -3,9 +3,9 @@ import { CustomContext } from "../shop"
 import './cart.css'
 
 function Cart(){
-  const {order, handleBasketShow} = useContext(CustomContext)
+  const {order, dispatch} = useContext(CustomContext)
   return(
-    <div className="cart blue-grey lighten-4 right" onClick={() => handleBasketShow()}>
+    <div className="cart blue-grey lighten-4 right" onClick={() => dispatch({type: 'isCartShow'})}>
       <i className="material-icons">local_grocery_store</i>
       {order ? <span className='quantity'>{order.length}</span> : null}
     </div>
