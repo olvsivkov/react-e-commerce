@@ -12,7 +12,7 @@ The site simulates an online store.
 When the project starts, you will see 20 products. 
 You can add an item to the cart. In the basket, select the quantity of goods or remove the goods from the basket. 
 This site was created as adaptive for all gadgets.
-The project is written in react using functional programming. Classes are not used.  
+The project is written in react using functional programming. I use only useReducer, useEffect and createContext hooks Classes and useState hook are not used.  
 
 _________________________________________________________________________
 
@@ -30,4 +30,4 @@ _________________________________________________________________________
 Когда проект запустится, вы увидите 20 товаров. 
 Вы можете добавить товар в корзину. В корзине выбрать колличество товара или удалить товар из корзины. 
 Этот сайт создан как адаптивный для всех гаджетов.
-Проект написан на реакт с использованием функционального программирования. Классы не использованы. 
+Проект написан на реакт с использованием функционального программирования. При написании проекта использованы хуки useReducer, useEffect and createContext.  Классы и useState не использованы. 
